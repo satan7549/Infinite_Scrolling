@@ -8,6 +8,7 @@ function App() {
     <Box display={"flex"} flexDirection={"column"}>
       <Navbar />
       <AllRoutes />
+      
     </Box>
   );
 }
