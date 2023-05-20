@@ -43,24 +43,24 @@ const Navbar = () => {
           onClick={isOpen ? onClose : onOpen}
         />
         <HStack spacing={8} alignItems={"center"}>
-        <HStack
-          as={"nav"}
-          spacing={6}
-          justifyContent={"space-between"}
-          display={{ base: "none", md: "flex" }}
-        >
-          {Links.map((link) => (
-            <NavLink key={link.element} to={link.to}>
-              <Text
-                fontSize={"20px"}
-                fontWeight="500"
-                _hover={{ borderBottom: "5px solid", cursor: "pointer" }}
-              >
-                {link.element}
-              </Text>
-            </NavLink>
-          ))}
-        </HStack>
+          <HStack
+            as={"nav"}
+            spacing={6}
+            justifyContent={"space-between"}
+            display={{ base: "none", md: "flex" }}
+          >
+            {Links.map((link) => (
+              <NavLink key={link.element} to={link.to}>
+                <Text
+                  fontSize={"20px"}
+                  fontWeight="500"
+                  _hover={{ borderBottom: "5px solid", cursor: "pointer" }}
+                >
+                  {link.element}
+                </Text>
+              </NavLink>
+            ))}
+          </HStack>
         </HStack>
       </Flex>
 
