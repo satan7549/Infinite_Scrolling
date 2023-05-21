@@ -17,6 +17,7 @@ const ContactCard: React.FC<ContactCardProps> = ({ contact }) => {
         p={4}
         mb={2}
         boxShadow="rgba(0, 0, 0, 0.24) 0px 3px 8px"
+        _hover={{ transform: "scale(1.02)" }}
       >
         <Flex flexDirection="row" alignItems="center">
           {/* Displaying the full name of the contact */}
