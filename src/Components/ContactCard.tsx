@@ -20,7 +20,7 @@ const ContactCard: React.FC<ContactCardProps> = ({ contact }) => {
       >
         <Flex flexDirection="row" alignItems="center">
           {/* Displaying the full name of the contact */}
-          <Text>{`${name.first} ${name.last}`}</Text>
+          <Text fontSize="2xl">{`${name.first} ${name.last}`}</Text>
           <Spacer />
           {/* Displaying the contact's profile picture */}
           <Avatar
