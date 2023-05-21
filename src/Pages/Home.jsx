@@ -29,12 +29,9 @@ const Home = () => {
 
   // Scroll event handler to load more contacts when conditions are met
   const handleScroll = () => {
-    if (
-      window.innerHeight + document.documentElement.scrollTop >=
-        document.documentElement.scrollHeight - 200 &&
-      !loading &&
-      hasMore
-    ) {
+    const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
+
+    if (scrollTop + clientHeight >= scrollHeight - 100 && !loading && hasMore) {
       setLoading(true);
       // setTime out for delay 1 sec.
       setTimeout(() => {
@@ -45,16 +42,15 @@ const Home = () => {
 
   // Effect hook to fetch contacts when the page number changes
   useEffect(() => {
+    setLoading(true);
     getData(page)
       .then((res) => {
         if (res.length === 0) {
           setHasMore(false);
         }
         setContacts((prevContacts) => [...prevContacts, ...res]);
-        setLoading(false);
       })
       .catch((err) => {
-        setLoading(false);
         toast({
           title: "Error",
           description: `Failed to fetch contacts: ${err.message}`,
@@ -62,6 +58,9 @@ const Home = () => {
           duration: 9000,
           isClosable: true,
         });
+      })
+      .finally(() => {
+        setLoading(false);
       });
   }, [page]);
 
