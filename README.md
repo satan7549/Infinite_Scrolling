@@ -1,46 +1,41 @@
-# Getting Started with Create React App
+# Infinite Scrolling Contact List App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a responsive infinite scrolling contact list app built using React. It allows authenticated users to view a list of contacts with their photos. The app implements fake login functionality, and the main list UI can only be accessed by logged-in users. 
 
-## Available Scripts
+## App Deployed Link:- https://face-prep-assignmnet-1.vercel.app/
 
-In the project directory, you can run:
+## Usage
 
-### `npm start`
+1. Open the app and you will be directed to the login page.
+2. Use the following credentials to log in: 
+   - `Username: foo`
+   - `Password: bar`
+3. After successful login, you will be redirected to the main contact list page ("/home").
+4. The contact list will initially load a partial list of contacts.
+5. As you scroll to the end of the page, the app will show a loading feedback and load more contacts after a 1-second delay.
+6. The list is designed to be responsive and should look correct on various screen sizes.
+7. Each contact in the list displays their name and profile picture.
+8. If you wish to log out, click the "Logout" button, and you will be redirected back to the login page.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Tech Stacks Used
+- React JS
+- Typescript 
+- Context API
+- Chakra UI
+- Javascript
+- React-Router-Dom
+- CSS
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Overview
+<h3> Login Page Image ↓<h3/>
+  ![Screenshot (117)](https://github.com/satan7549/face-prep-assignmnet-1/assets/107472942/74499419-3906-45c6-8962-5033b995a4c1)
 
-### `npm test`
+<h3> Home Page Image ↓<h3/>
+![Screenshot (118)](https://github.com/satan7549/face-prep-assignmnet-1/assets/107472942/edfa7f5a-1de3-4022-826e-16fcb0f3bd04)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<h3> Mobile View ↓<h3/>
+  ![Mobile-view](https://github.com/satan7549/face-prep-assignmnet-1/assets/107472942/c42e8ce9-33d7-4404-872a-2737d4baa3df)
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+#
+  
+Feel free to explore the code and make any necessary modifications to suit your specific requirements. Enjoy using the infinite scrolling contact list app!
