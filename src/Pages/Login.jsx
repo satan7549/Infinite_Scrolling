@@ -37,7 +37,7 @@ const Login = () => {
     if (loginDetails.username === "foo" && loginDetails.password === "bar") {
       login();
       toast({
-        title: "Login Sucess.",
+        title: "Login Success.",
         description: "You have been successfully logged in.",
         status: "success",
         duration: 9000,
@@ -58,25 +58,23 @@ const Login = () => {
   const { username, password } = loginDetails;
   return (
     <Container
-      width={{
-        base: "full",
-        sm: "full",
-        md: "container.xl",
-        lg: "container.lg",
-      }}
-      centerContent={true}
+      width="100%"
+      minHeight="100vh"
+      display="flex"
+      alignItems="center"
+      justifyContent="center"
     >
       <VStack
         width="full"
+        maxWidth="400px"
         borderRadius="lg"
-        boxShadow={"rgba(0, 0, 0, 0.24) 0px 3px 8px"}
+        boxShadow="rgba(0, 0, 0, 0.24) 0px 3px 8px"
         p={4}
-        my={{ base: 24, sm: 24, md: 28, lg: 40 }}
       >
         <FormControl p={2}>
           <Heading
             fontWeight="bolder"
-            textAlign={"center"}
+            textAlign="center"
             fontSize="20px"
             mb="20px"
           >
