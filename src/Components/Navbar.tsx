@@ -73,7 +73,6 @@ const Navbar: React.FC = () => {
                 Home
               </Text>
             </Link>
-
             {/* Render the Login link or Logout button based on authentication state */}
             {isAuthenticated ? (
               <Button onClick={handleLogout} colorScheme="teal">
