@@ -1,12 +1,30 @@
-import React from "react";
-import { Text, Flex, Button, HStack, Container, Link } from "@chakra-ui/react";
+import React, { useContext } from "react";
+import {
+  Text,
+  Flex,
+  Button,
+  HStack,
+  Container,
+  Link,
+  useToast,
+} from "@chakra-ui/react";
 import { NavLink, useLocation } from "react-router-dom";
+import { AuthContext } from "../Context/AuthContext";
 
-const Navbar = ({ isAuthenticated, onLogout }) => {
+const Navbar = () => {
+  const { isAuthenticated, logout } = useContext(AuthContext);
   const location = useLocation();
+  const toast = useToast();
 
   const handleLogout = () => {
-    onLogout();
+    logout();
+    toast({
+      title: "Logout Sucess.",
+      description: "You have been successfully logged out.",
+      status: "success",
+      duration: 9000,
+      isClosable: true,
+    });
   };
 
   return (
