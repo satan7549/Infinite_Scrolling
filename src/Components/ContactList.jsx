@@ -8,7 +8,6 @@ const ContactList = ({ contacts, loading }) => {
     <Box
       mt={"80px"}
       p={4}
-      //   maxW={{ base: "100%", sm: "320px", md: "500px", lg: "800px" }}
       width={{ base: "100%", sm: "320px", md: "500px", lg: "800px" }}
       mx="auto"
       boxShadow={"rgba(99, 99, 99, 0.2) 0px 2px 8px 0px"}
