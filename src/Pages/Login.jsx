@@ -1,7 +1,6 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import {
   Button,
-  Center,
   Container,
   FormControl,
   Input,
@@ -10,14 +9,16 @@ import {
   useToast,
 } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
+import { AuthContext } from "../Context/AuthContext";
 
 const initState = {
   username: "",
   password: "",
 };
 
-const Login = ({ onLogin }) => {
+const Login = () => {
   const [loginDetails, setLoginDetails] = useState(initState);
+  const { login } = useContext(AuthContext);
   const navigate = useNavigate();
   const toast = useToast();
 
@@ -26,12 +27,18 @@ const Login = ({ onLogin }) => {
     setLoginDetails({ ...loginDetails, [name]: value });
   };
 
+  const handleKeyPress = (e) => {
+    if (e.key === "Enter") {
+      handleLogin();
+    }
+  };
+
   const handleLogin = () => {
     if (loginDetails.username === "foo" && loginDetails.password === "bar") {
-      onLogin();
+      login();
       toast({
         title: "Login Sucess.",
-        description: "We've successfully logged you in.",
+        description: "You have been successfully logged in.",
         status: "success",
         duration: 9000,
         isClosable: true,
@@ -73,12 +80,13 @@ const Login = ({ onLogin }) => {
             fontSize="20px"
             mb="20px"
           >
-            Login Form
+            SIGN FORM
           </Heading>
           <Input
             name="username"
             value={username}
             onChange={handleChange}
+            onKeyPress={handleKeyPress}
             type="text"
             placeholder="Enter Username"
             borderRadius="lg"
@@ -91,6 +99,7 @@ const Login = ({ onLogin }) => {
             name="password"
             value={password}
             onChange={handleChange}
+            onKeyPress={handleKeyPress}
             type="password"
             placeholder="Enter password"
             borderRadius="lg"
