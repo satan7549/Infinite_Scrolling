@@ -14,7 +14,7 @@ const ContactCard = ({ contact }) => {
       }}
     >
       <Box
-        borderWidth="1px"
+        // borderWidth="1px"
         borderRadius="lg"
         p={4}
         mb={2}
