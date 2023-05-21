@@ -27,14 +27,15 @@ This is a responsive infinite scrolling contact list app built using React. It a
 - CSS
 
 ## Overview
-<h3> Login Page Image ↓<h3/>
-  ![Screenshot (117)](https://github.com/satan7549/face-prep-assignmnet-1/assets/107472942/74499419-3906-45c6-8962-5033b995a4c1)
+### Login Page Image ↓
+![Screenshot (117)](https://github.com/satan7549/face-prep-assignmnet-1/assets/107472942/cadffed8-805e-441a-82d6-21d6e25b2e39)
 
-<h3> Home Page Image ↓<h3/>
-![Screenshot (118)](https://github.com/satan7549/face-prep-assignmnet-1/assets/107472942/edfa7f5a-1de3-4022-826e-16fcb0f3bd04)
+### Home Page Image ↓
+(![Screenshot (118)](https://github.com/satan7549/face-prep-assignmnet-1/assets/107472942/01658d7a-0296-4532-af7d-59a7dd1f9f50)
 
-<h3> Mobile View ↓<h3/>
-  ![Mobile-view](https://github.com/satan7549/face-prep-assignmnet-1/assets/107472942/c42e8ce9-33d7-4404-872a-2737d4baa3df)
+### Mobile View ↓
+![Mobile-view](https://github.com/satan7549/face-prep-assignmnet-1/assets/107472942/48185aa2-60c3-45a7-8a0a-990b0831e845)
+
 
 #
   
