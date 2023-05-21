@@ -3,6 +3,7 @@ import ContactList from "../Components/ContactList";
 import { useToast } from "@chakra-ui/react";
 import { Contact } from "../constains";
 
+// Home component responsible for fetching and displaying a list of contacts
 const Home: React.FC = () => {
   const [contacts, setContacts] = useState<Contact[]>([]);
   const [page, setPage] = useState(1);
@@ -10,6 +11,7 @@ const Home: React.FC = () => {
   const [hasMore, setHasMore] = useState(true);
   const toast = useToast();
 
+  // Fetches contact data from the API
   const getData = async (page: number) => {
     try {
       const res = await fetch(
@@ -25,17 +27,20 @@ const Home: React.FC = () => {
     }
   };
 
+  // Handles scroll event to load more contacts when reaching the end of the page
   const handleScroll = () => {
     const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
 
     if (scrollTop + clientHeight >= scrollHeight - 100 && !loading && hasMore) {
       setLoading(true);
+      //Load more contacts after 1sec delay
       setTimeout(() => {
         setPage((prevPage) => prevPage + 1);
       }, 1000);
     }
   };
 
+  // Fetches initial contacts and sets up scroll event listener
   useEffect(() => {
     setLoading(true);
     getData(page)
@@ -48,6 +53,7 @@ const Home: React.FC = () => {
       .catch((err) => {
         toast({
           title: "Error",
+          position: "bottom-right",
           description: `Failed to fetch contacts: ${err.message}`,
           status: "error",
           duration: 9000,
@@ -59,9 +65,11 @@ const Home: React.FC = () => {
       });
   }, [page]);
 
+  // Adds scroll event listener when the component mounts and removes it when unmounted
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
 
+    //cleanup function call
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
