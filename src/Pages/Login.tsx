@@ -12,11 +12,13 @@ import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../Context/AuthContext";
 import { AuthContextType, LoginDetails } from "../constains";
 
+// Initial state for login details
 const initState: LoginDetails = {
   username: "",
   password: "",
 };
 
+// Login component responsible for handling user login
 const Login: React.FC = () => {
   const [loginDetails, setLoginDetails] = useState<LoginDetails>(initState);
   const { login } = useContext<AuthContextType>(
@@ -25,17 +27,20 @@ const Login: React.FC = () => {
   const navigate = useNavigate();
   const toast = useToast();
 
+  // Handles input change event
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setLoginDetails({ ...loginDetails, [name]: value });
   };
 
+  // Handles key press event (Enter key) for submitting the login form
   const handleKeyPress = (e: KeyboardEvent<HTMLInputElement>) => {
     if (e.key === "Enter") {
       handleLogin();
     }
   };
 
+  // Handles login attempt
   const handleLogin = () => {
     if (loginDetails.username === "foo" && loginDetails.password === "bar") {
       login();
