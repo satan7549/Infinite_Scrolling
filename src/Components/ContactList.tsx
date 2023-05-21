@@ -4,11 +4,10 @@ import ContactCard from "./ContactCard";
 import Loading from "./Loading";
 import { Contact } from "../constains";
 
-
-
+// ContactList component responsible for rendering a list of contacts
 interface ContactListProps {
-  contacts: Contact[];
-  loading: boolean;
+  contacts: Contact[]; // Array of contacts to be rendered
+  loading: boolean; // Indicates whether the contacts are still loading
 }
 
 const ContactList: React.FC<ContactListProps> = ({ contacts, loading }) => {
@@ -30,6 +29,7 @@ const ContactList: React.FC<ContactListProps> = ({ contacts, loading }) => {
           </List>
         ))}
       </UnorderedList>
+      {/* Render the Loading component if contacts are still loading*/}
       {loading && <Loading />}
     </Box>
   );
