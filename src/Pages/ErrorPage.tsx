@@ -2,6 +2,7 @@ import { Container, Heading, Text, VStack } from "@chakra-ui/react";
 import React from "react";
 import { useLocation } from "react-router-dom";
 
+// ErrorPage component responsible for rendering a 404 error page
 const ErrorPage: React.FC = () => {
   const location = useLocation();
   const { pathname } = location;
