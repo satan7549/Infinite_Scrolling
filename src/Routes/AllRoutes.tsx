@@ -9,6 +9,7 @@ import { AuthContext } from "../Context/AuthContext";
 import PrivateRoute from "./PrivateRoute";
 import { AuthContextType } from "../constains";
 
+// AllRoutes component responsible for defining the application routes
 const AllRoutes: React.FC = () => {
   const { isAuthenticated } = useContext<AuthContextType>(
     AuthContext as React.Context<AuthContextType>
