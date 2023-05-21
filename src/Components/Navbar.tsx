@@ -4,7 +4,7 @@ import {
   Flex,
   Button,
   HStack,
-  Container,  
+  Container,
   Link,
   useToast,
 } from "@chakra-ui/react";
@@ -12,16 +12,23 @@ import { NavLink, useLocation } from "react-router-dom";
 import { AuthContextType } from "../constains";
 import { AuthContext } from "../Context/AuthContext";
 
+// Navbar component responsible for rendering the navigation bar
 const Navbar: React.FC = () => {
+  // Retrieve authentication context and logout function from the AuthContext
   const { isAuthenticated, logout } = useContext<AuthContextType>(
     AuthContext as React.Context<AuthContextType>
   );
-  
+
+  // Retrieve the current location
   const location = useLocation();
+
+  // Initialize Chakra UI toast
   const toast = useToast();
 
+  // Handle logout action
   const handleLogout = () => {
     logout();
+    // Show a toast notification for successful logout
     toast({
       title: "Logout Success.",
       description: "You have been successfully logged out.",
@@ -53,6 +60,7 @@ const Navbar: React.FC = () => {
             justifyContent={"space-between"}
             display={"flex"}
           >
+            {/* Render the Home link */}
             <Link
               to={"/home"}
               as={NavLink}
@@ -65,6 +73,8 @@ const Navbar: React.FC = () => {
                 Home
               </Text>
             </Link>
+
+            {/* Render the Login link or Logout button based on authentication state */}
             {isAuthenticated ? (
               <Button onClick={handleLogout} colorScheme="teal">
                 Logout
