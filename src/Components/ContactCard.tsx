@@ -1,21 +1,22 @@
 import React from "react";
-import { ListItem, Box, Flex, Spacer, Text, Avatar } from "@chakra-ui/react";
+import { GridItem, Box, Flex, Spacer, Text, Avatar } from "@chakra-ui/react";
 import { Contact } from "../constains";
+import Loading from "./Loading";
 
 // ContactCard component responsible for rendering an individual contact card
 interface ContactCardProps {
   contact: Contact; // Contact object containing contact information
+  loading: boolean;
 }
 
-const ContactCard: React.FC<ContactCardProps> = ({ contact }) => {
+const ContactCard: React.FC<ContactCardProps> = ({ contact, loading }) => {
   const { name, picture } = contact; // Extracting name and picture from the contact object
 
   return (
-    <ListItem>
+    <GridItem>
       <Box
         borderRadius="lg"
         p={4}
-        mb={2}
         boxShadow="rgba(0, 0, 0, 0.24) 0px 3px 8px"
         _hover={{ transform: "scale(1.02)" }}
       >
@@ -32,7 +33,9 @@ const ContactCard: React.FC<ContactCardProps> = ({ contact }) => {
           />
         </Flex>
       </Box>
-    </ListItem>
+      {/* Render the Loading component if contacts are still loading*/}
+      {loading && <Loading />}
+    </GridItem>
   );
 };
 
