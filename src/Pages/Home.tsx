@@ -15,7 +15,7 @@ const Home: React.FC = () => {
   const getData = async (page: number) => {
     try {
       const res = await fetch(
-        `https://randomuser.me/api/?results=6&page=${page}`
+        `https://randomuser.me/api/?results=12&page=${page}`
       );
       if (!res.ok) {
         throw new Error("Failed to fetch contacts.");
