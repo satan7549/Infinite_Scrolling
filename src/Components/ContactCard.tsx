@@ -1,15 +1,14 @@
 import React from "react";
 import { GridItem, Box, Flex, Spacer, Text, Avatar } from "@chakra-ui/react";
 import { Contact } from "../constains";
-import Loading from "./Loading";
+
 
 // ContactCard component responsible for rendering an individual contact card
 interface ContactCardProps {
   contact: Contact; // Contact object containing contact information
-  loading: boolean;
 }
 
-const ContactCard: React.FC<ContactCardProps> = ({ contact, loading }) => {
+const ContactCard: React.FC<ContactCardProps> = ({ contact }) => {
   const { name, picture } = contact; // Extracting name and picture from the contact object
 
   return (
@@ -34,7 +33,7 @@ const ContactCard: React.FC<ContactCardProps> = ({ contact, loading }) => {
         </Flex>
       </Box>
       {/* Render the Loading component if contacts are still loading*/}
-      {loading && <Loading />}
+      
     </GridItem>
   );
 };

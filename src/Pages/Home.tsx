@@ -75,11 +75,7 @@ const Home: React.FC = () => {
     };
   }, []);
 
-  return (
-    <>
-      <ContactList contacts={contacts} loading={loading} />
-    </>
-  );
+  return <ContactList contacts={contacts} loading={loading} />;
 };
 
 export default Home;

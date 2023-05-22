@@ -2,6 +2,7 @@ import React from "react";
 import { Grid, Box, Heading } from "@chakra-ui/react";
 import ContactCard from "./ContactCard";
 import { Contact } from "../constains";
+import Loading from "./Loading";
 
 // ContactList component responsible for rendering a list of contacts
 interface ContactListProps {
@@ -11,7 +12,7 @@ interface ContactListProps {
 
 const ContactList: React.FC<ContactListProps> = ({ contacts, loading }) => {
   return (
-    <Box h={"100vh"} mt={"80px"} p={4}>
+    <Box minHeight={"100vh"} mt={"80px"} p={4} overflowY={"auto"}>
       <Heading textAlign="center" mb={4}>
         Infinite Scroll Contacts
       </Heading>
@@ -25,9 +26,10 @@ const ContactList: React.FC<ContactListProps> = ({ contacts, loading }) => {
         gap={4}
       >
         {contacts.map((contact, index) => (
-          <ContactCard key={index} contact={contact} loading={loading} />
+          <ContactCard key={index} contact={contact} />
         ))}
       </Grid>
+      {loading && <Loading />}
     </Box>
   );
 };
