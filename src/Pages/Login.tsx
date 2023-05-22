@@ -87,7 +87,7 @@ const Login: React.FC = () => {
             fontSize="20px"
             mb="20px"
           >
-            SIGN FORM
+            LOGIN FORM
           </Heading>
           <Input
             name="username"
@@ -130,7 +130,7 @@ const Login: React.FC = () => {
             mt={4}
             onClick={handleLogin}
           >
-            SIGN IN
+            LOGIN
           </Button>
         </FormControl>
       </VStack>
